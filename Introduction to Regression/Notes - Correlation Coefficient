@@ -1,0 +1,4 @@
+The correlation coefficient is defined for a list of pairs (x1, y1),....(xn, yn) as the sum of the product of the standardized values: (x1-mx/s2), (y1-mx/s2) for each observation i. The product term is positive when both the standardized x and y are positive or when they are both negative, and the product term is negative when the standardized x and y have different signs (one is positive and one is negative).
+The Greek letter p is typically used to denote the correlation.
+The correlation coefficient essentially conveys how two variables move together.
+The correlation coefficient is always between -1 and 1.

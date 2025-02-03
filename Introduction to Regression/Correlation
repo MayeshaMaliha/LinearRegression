@@ -1,0 +1,3 @@
+Galton tried to predict sons' heights based on fathers' heights.
+The mean and standard errors are insufficient for describing an important characteristic of the data: the trend that the taller the father, the taller the son.
+The correlation coefficient is an informative summary of how two variables move together that can be used to predict one variable using the other.

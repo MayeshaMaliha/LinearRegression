@@ -6,12 +6,12 @@ If the variables are highly correlated, the oval is long and thin. If they are u
 If two variables follow a bivariate normal distribution, their correlation is meaningful.
 The regression line gives the best prediction of one variable based on the other.
 The expected value (mean) of Y given X follows this formula:
-# E(Y∣X=x)= μY​+ρ*(X−μX​)*σY​/σX​​
+**E(Y∣X=x)= μY​+ρ*(X−μX​)*σY​/σX​​**
 μ_Y, μ_X = Means of Y and X
 σ_Y, σ_X = Standard deviations of Y and X
 ρ = Correlation between X and Y
 The slope of the regression line is:
-ρσYσXρσX​σY​​
+**ρ*σY/σX** 
 This shows how much Y changes for a unit increase in X.
 ## 3. Why Does This Matter?
 If the data follows a bivariate normal distribution, regression is statistically valid.

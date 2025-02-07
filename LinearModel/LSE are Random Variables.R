@@ -1,0 +1,33 @@
+library(gridExtra)
+B <- 1000
+N <- 50
+lse <- replicate(B, {
+  sample_n(galton_heights, N, replace  = TRUE) %>%
+    lm(son ~ father, data =.) %>% .$coef
+})
+
+lse <- data.frame(beta_0 = lse[1,], beta_1 = lse[2,])
+p1 <- lse %>% ggplot(aes(beta_0)) + geom_histogram(binwidth = 5, color = "black")
+p2 <- lse %>% ggplot(aes(beta_1)) + geom_histogram(binwidth = 0.1, color = "black")
+grid.arrange(p1, p2, ncol = 2)
+
+sample_n(galton_heights, N, replace = TRUE) %>%
+  lm(son ~ father, data = .) %>% summary %>% 
+  .$coef
+
+
+lse %>% summarize(se_0 = sd(beta_0), se_1 = sd(beta_1))
+# Correlation before standardizing
+lse %>% summarize(cor(beta_0, beta_1))
+
+
+B <- 1000
+N <- 50
+lse <- replicate(B, {
+  sample_n(galton_heights, N, replace = TRUE) %>%
+    mutate(father = father - mean(father)) %>%
+    lm(son ~ father, data = .) %>% .$coef 
+})
+
+# Correlation after standardizing
+cor(lse[1,], lse[2,]) 
